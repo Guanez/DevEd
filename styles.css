@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    transition: all .5s ease;
+    color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 5%;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.17);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.logo {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+header img{
+    max-height: 3rem;
+}
+
+header nav{
+    display: flex; 
+    gap: 3rem;
+    font-size: 1.2rem;
+    
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3rem;
+    margin-right: auto;
+}
+
+.search-container input[type="search"] {
+    width: 20rem;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-container input[type="search"]:focus {
+    border-color: #007BFF;
+}
+
+.search-container button {
+    margin-left: -46px;
+    background-color: #ccc;
+    color: white;
+    padding: 7px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #000000;
+}
+
+.signup-login {
+    display: flex;
+    gap: 10px;
+}
+
+.signup-login button {
+    border-radius: 12px;  
+    padding: 10px 24px;
+    cursor: pointer;
+}
+
+.signup-login button:first-child {
+    background-color: #f0f2ff; 
+    color: #000000;                  
+    font-size: 16px;      
+}
+
+.signup-login button:last-child {
+    background-color: #0f6bae; 
+    color: #ffffff;           
+    font-size: 16px;
+}
+
+.signup-login button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+
+
+
+
+/*
+.icons{
+    margin-left: 8.5rem;
+}
+
+.icons a{
+    margin: 2rem;
+}
+
+.icons a:nth-child(2){
+    margin-right: 0;
+}*/
