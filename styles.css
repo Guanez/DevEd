@@ -1,7 +1,9 @@
 *{
+    
     margin: 0;
     padding: 0;
     border: none;
+
     text-decoration: none;
     transition: all .5s ease;
     color: black;
@@ -9,9 +11,18 @@
 
 html {
     scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
+body {
+    background: url(images/homebg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 100%;
+}
 
+/*header*/
 header{
     position: fixed;
     top: 0;
@@ -114,10 +125,121 @@ header nav{
     color: #fff;
 }
 
+/*main webpage content container*/
+.whole-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-top: 4.1rem;
+}
 
+/*home*/
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: calc(100vh - 4.2rem);
+    width: 100%;
+} 
 
+.home .home_con {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+    background-color: rgba(0, 0, 0, 0.00001);
+}
 
+.home-content{
+    text-align: right;
+    width: 80%; 
+}
 
+.home-content h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: .5rem;
+}
+
+.home-content h2 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.home-content p {
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+
+/*features*/
+.features {
+    background: rgb(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    padding-top: 2rem;
+    margin-top: 0;
+}
+
+.features p {
+    font-size: 1.3rem;
+    padding: 0 4rem;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin: 2rem 0;
+    color: #ffffff;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 4rem;
+}
+
+.feature-item {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.feature-icon {
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #dddddd;
+}
 
 
 /*
