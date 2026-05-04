@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <title>Dev/Ed - Marketplace</title>
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="marketplace.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"> 
+            <img src="images/logoword2.png" alt=" Dev/Ed logo word">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html">About us</a>
+        </nav>
+
+        <div class="search-container">
+            <input type="search" placeholder="Search">
+            <button>🔍</button>
+        </div>
+
+        <div class="signup-login">
+            <a href="register.html" class="sign-up-link"> Sign up </a>
+            <a href="loginn.html" class="log-in-link"> Log in </a>
+        </div>
+    </header>
+
+    <div class="promo-banner">
+        <p>Special Offer: Get 20% off on all courses! Use code <strong>PROMO20</strong> at checkout.</p>
+    </div>
+
+    <!-- Introduction Section -->
+    <div class="intro-section">
+        <div class="container1">
+            <h2><span class="highlight">Welcome to DevEd Marketplace</span></h2>
+            <p>DevEd Marketplace is your premier destination for high-quality online courses. Whether you're looking to advance your career, learn a new skill, or simply explore a new hobby, we have something for everyone. Our courses are designed by industry experts and are accessible to learners of all levels.</p>
+            <p>Join our community of learners today and start your journey towards personal and professional growth. With DevEd Marketplace, the possibilities are endless.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="courses-title">Premium Available Courses</h2>
+        <div class="tutor-list">
+            <div class="tutor-card">
+                <h3>Web Development</h3>
+                <p>University of Chicago<br>MA Computer Science</p>
+                <p>P200.00</p>
+                 <button onclick="checkout('Web Development', 'P200.00')">Purchase</button>
+            </div>
+            <div class="tutor-card">
+                <h3>AI and Data Science</h3>
+                <p>University of California, Berkeley</p>
+                <p>P200.00</p>
+                 <button onclick="checkout('AI and Data Science', 'P200.00')">Purchase</button>
+            </div>
+            <div class="tutor-card">
+                <h3>Machine Learning</h3>
+                <p>University of Arizona<br>MA Computer Science</p>
+                <p>P300.00</p>
+                 <button onclick="checkout('Machine Learning', 'P300.00')">Purchase</button>
+            </div>
+            <div class="tutor-card">
+                <h3>App Development</h3>
+                <p>University of Chicago<br>MA Computer Science</p>
+                <p>P200.00</p>
+                 <button onclick="checkout('App Development', 'P200.00')">Purchase</button>
+            </div>
+            <div class="tutor-card">
+                <h3>Front-end Basics</h3>
+                <p>University of California, Berkeley</p>
+                <p>P200.00</p>
+                 <button onclick="checkout('Front-end Basics', 'P200.00')">Purchase</button>
+            </div>
+            <div class="tutor-card">
+                <h3>Back-end Technology</h3>
+                <p>University of Chicago<br>MA Computer Science</p>
+                <p>P200.00</p>
+                 <button onclick="checkout('Back-end Technology', 'P200.00')">Purchase</button>
+            </div>
+            <div class="tutor-card">
+                <h3>Full Stack Technology</h3>
+                <p>University of Arizona<br>MA Computer Science</p>
+                <p>P200.00</p>
+                 <button onclick="checkout('Full Stack Technology', 'P200.00')">Purchase</button>
+            </div>
+            <div class="tutor-card">
+                <h3>Intro to Cybersecurity</h3>
+                <p>University of Chicago<br>MA Computer Science</p>
+                <p>P200.00</p>
+                 <button onclick="checkout('Intro to Cybersecurity', 'P200.00')">Purchase</button>
+            </div>
+            <div class="tutor-card">
+                <h3>Networking Basics</h3>
+                <p>University of Chicago<br>MA Computer Science</p>
+                <p>P299.00</p>
+                 <button onclick="checkout('Networking Basics', 'P299.00')">Purchase</button>
+            </div>
+            <div class="tutor-card">
+                <h3>Database Management</h3>
+                <p>University of Chicago<br>MA Computer Science</p>
+                <p>P200.00</p>
+                 <button onclick="checkout('Database Management', 'P200.00')">Purchase</button>
+            </div>
+            <div class="tutor-card">
+                <h3>Intro to Cryptography</h3>
+                <p>University of Chicago<br>MA Computer Science</p>
+                <p>P300.00</p>
+                 <button onclick="checkout('Intro to Cryptography', 'P300.00')">Purchase</button>
+            </div>
+            <div class="tutor-card">
+                <h3>Blockchain Technology</h3>
+                <p>University of Chicago<br>MA Computer Science</p>
+                <p>P250.00</p>
+                 <button onclick="checkout('Blockchain Technology', 'P250.00')">Purchase</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Logo and Subscription -->
+                <div class="footer-item">
+                    <form id="subscribe-form">
+                        <div class="subscribe-form">
+                            <img class="footer-logo" src="images/logoword.png" alt="logo">
+                            <p>
+                                Get the latest updates about DevEd's new products and services.
+                            </p>
+                            <div class="form-row">
+                                <input type="email" placeholder="Enter your email" required>
+                                <button type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>                        
+                    <div class="socials">
+                        <a href="#fb" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#twitter" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#instagram" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#linkedin" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#email" class="email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#whatsapp" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+    
+                <div class="footer-item">
+                    <h3>Top Tutorials</h3>
+                    <ul>
+                        <li><a href="#">Interactive Programming</a></li>
+                        <li><a href="#">App Development</a></li>
+                        <li><a href="#">Web Design Basics</a></li>
+                        <li><a href="#">AI and Data Science</a></li>
+                        <li><a href="#">HTML Tutorial</a></li>
+                        <li><a href="#">CSS Tutorial</a></li>
+                        <li><a href="#">JavaScript Tutorial</a></li>
+                        <li><a href="#">How To Tutorial</a></li>
+                        <li><a href="#">SQL Tutorial</a></li>
+                        <li><a href="#">Python Tutorial</a></li>
+                        <li><a href="#">W3.CSS Tutorial</a></li>
+                        <li><a href="#">Bootstrap Tutorial</a></li>
+                        <li><a href="#">PHP Tutorial</a></li>
+                        <li><a href="#">Java Tutorial</a></li>
+                        <li><a href="#">C++ Tutorial</a></li>
+                        <li><a href="#">jQuery Tutorial</a></li>
+                    </ul>
+                </div>
+                
+    
+                <div class="footer-item">
+                    <h3>Top Professors</h3>
+                    <ul>
+                        <li><a href="#">Jayson Hermogenes</a></li>
+                        <li><a href="#">Simplicio Santos</a></li>
+                        <li><a href="#">Mark Jonathan Pascual</a></li>
+                        <li><a href="#">Bryan Asistin</a></li>
+                        <li><a href="#">Simon Mendoza</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-item">
+                    <h3>Get Certified</h3>
+                    <p>Boost your career with certifications in:</p>
+                    <ul>
+                        <li><a href="#">AI</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">HTML Certificate</a></li>
+                        <li><a href="#">CSS Certificate</a></li>
+                        <li><a href="#">JavaScript Certificate</a></li>
+                        <li><a href="#">Front End Certificate</a></li>
+                        <li><a href="#">SQL Certificate</a></li>
+                        <li><a href="#">Python Certificate</a></li>
+                        <li><a href="#">PHP Certificate</a></li>
+                        <li><a href="#">jQuery Certificate</a></li>
+                        <li><a href="#">Java Certificate</a></li>
+                        <li><a href="#">C++ Certificate</a></li>
+                        <li><a href="#">C# Certificate</a></li>
+                        <li><a href="#">XML Certificate</a></li>
+                    </ul>
+                </div>                    
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dev/Ed. All Rights Reserved.</p>
+                <p><a href="#terms">Terms of Service</a> | <a href="#privacy">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Checkout</h2>
+            <p id="checkoutDetails"></p>
+            <input type="text" id="promoCode" placeholder="Enter promo code">
+            <p id="promoError" style="color: red;"></p>
+            <button onclick="confirmPurchase()">Confirm Purchase</button>
+        </div>
+    </div>
+
+    
+    <div id="successMessage" class="success-message">
+        <p>Purchase successful! Thank you for your order.</p>
+    </div>
+
+
+     <script>
+        const validPromoCode = 'PROMO20';
+        const discountPercentage = 20;
+        let isLoggedIn = false; 
+
+        function checkout(courseName, price) {
+            document.getElementById('checkoutDetails').innerText = `You are about to purchase ${courseName} for ${price}.`;
+            document.getElementById('checkoutModal').style.display = 'block';
+            document.getElementById('promoCode').value = ''; 
+            document.getElementById('promoError').innerText = ''; 
+        }
+
+        function closeModal() {
+            document.getElementById('checkoutModal').style.display = 'none';
+        }
+
+        function confirmPurchase() {
+            if (!isLoggedIn) {
+                window.location.href = 'loginn.html'; 
+                return;
+            }
+
+            const promoCode = document.getElementById('promoCode').value;
+            const checkoutDetails = document.getElementById('checkoutDetails').innerText;
+            const price = parseFloat(checkoutDetails.match(/P(\d+\.\d+)/)[1]);
+            let finalPrice = price;
+
+            if (promoCode === validPromoCode) {
+                const discount = (price * discountPercentage) / 100;
+                finalPrice = price - discount;
+                document.getElementById('promoError').innerText = ''; 
+            } else if (promoCode !== '') {
+                document.getElementById('promoError').innerText = 'Invalid promo code. Please try again.';
+                return;
+            }
+
+
+        }
+     </script>
+<script src="global.js"></script>
+</body>
+</html>

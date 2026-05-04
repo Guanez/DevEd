@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Dev/Ed - Community Support</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="community_support.css">
+</head>
+<body>
+    <header>
+        <a href="#home" class="logo"> 
+            <img src="images/logoword2.png" alt=" Dev/Ed logo word">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#About">About us</a>
+        </nav>
+
+        <div class="search-container">
+            <input type="search" placeholder="Search">
+            <button>🔍</button>
+        </div>
+
+        <div class="signup-login">
+            <a href="register.html" class="sign-up-link"> Sign up </a>
+            <a href="loginn.html" class="log-in-link"> Log in </a>
+        </div>
+    </header>
+
+    <div class="welcome-section">
+        <h1>Welcome to the Community Support Forum</h1>
+    </div>
+
+    <div class="container">
+        <div class="question-form">
+            <h2>Ask a Question</h2>
+            <form onsubmit="handleQuestionSubmit(event)">
+                Name<input type="text" placeholder="Your Name" required />
+                Email<input 
+                    type="email" 
+                    placeholder="Your Email" 
+                    id="emailField" 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                    title="Please enter a valid email address (e.g., example@domain.com)" 
+                    required 
+                />
+                <input type="text" id="questionTitle" placeholder="Enter your question title..." required>
+                <textarea id="questionDescription" rows="5" placeholder="Describe your question in detail..." required></textarea>
+                <button type="submit">Submit Question</button>
+            </form>
+        </div>
+
+        <div class="questions-section">
+            <h2 id="h2">Most Frequent Questions</h2>
+            <div class="question">
+                <h2 onclick="showModal('How to center a div in CSS?', 'You can center a div using CSS flexbox or grid. Example: `display: flex; justify-content: center; align-items: center;`.')">How to center a div in CSS?</h2>
+                <p>Posted by: John Doe</p>
+                <p>Likes: <span id="likes1">23</span></p>
+                <p>Dislikes: <span id="dislikes1">0</span></p>
+                <button onclick="increaseLikes(this)" data-id="likes1">Like👍</button>
+                <button onclick="decreaseLikes(this)" data-id="dislikes1">Dislike👎</button>
+
+            </div>
+            <div class="question">
+                <h2 onclick="showModal('What is the difference between let and var in JavaScript?', 'The key differences are scoping and hoisting. `let` has block scope, whereas `var` has function scope.')">What is the difference between let and var in JavaScript?</h2>
+                <p>Posted by: Jane Smith</p>
+                <p>Likes: <span id="likes2">48</span></p>
+                <p>Dislikes: <span id="dislikes2">0</span></p>
+                <button onclick="increaseLikes(this)" data-id="likes2">Like👍</button>
+                <button onclick="decreaseLikes(this)" data-id="dislikes2">Dislike👎</button>
+            </div>
+            <div class="question">
+                <h2 onclick="showModal('How do I optimize SQL queries for large datasets?', 'You can optimize SQL queries by using proper indexing, avoiding SELECT *, and optimizing joins.')">How do I optimize SQL queries for large datasets?</h2>
+                <p>Posted by: Alex Brown</p>
+                <p>Likes: <span id="likes3">75</span></p>
+                <p>Dislikes: <span id="dislikes3">0</span></p>
+                <button onclick="increaseLikes(this)" data-id="likes3">Like👍</button>
+                <button onclick="decreaseLikes(this)" data-id="dislikes3">Dislike👎</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="join-community">
+        <h2>Join the Community</h2>
+        <p>Become a part of the community to connect with like-minded individuals, share your knowledge, and learn from others.</p>
+        <div class="cta-buttons">
+            <button onclick="window.location.href='https://discord.gg/5axa6JpQ'">Join Now</button>
+            <button onclick="window.location.href='loginn.html'">Already a member? Log in</button>
+        </div>
+    </div>
+
+    <div class="modal" id="answerModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">Close</button>
+            <div class="modal-header" id="modalTitle"></div>
+            <div class="modal-body" id="modalContent"></div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">Question submitted successfully!</div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Logo and Subscription -->
+                <div class="footer-item">
+                    <form id="subscribe-form">
+                        <div class="subscribe-form">
+                            <img class="footer-logo" src="images/logoword.png" alt="logo">
+                            <p>
+                                Get the latest updates about DevEd's new products and services.
+                            </p>
+                            <div class="form-row">
+                                <input type="email" placeholder="Enter your email" required>
+                                <button type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>                        
+                    <div class="socials">
+                        <a href="#fb" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#twitter" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#instagram" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#linkedin" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#email" class="email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#whatsapp" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+    
+                <div class="footer-item">
+                    <h3>Top Tutorials</h3>
+                    <ul>
+                        <li><a href="#">Interactive Programming</a></li>
+                        <li><a href="#">App Development</a></li>
+                        <li><a href="#">Web Design Basics</a></li>
+                        <li><a href="#">AI and Data Science</a></li>
+                        <li><a href="#">HTML Tutorial</a></li>
+                        <li><a href="#">CSS Tutorial</a></li>
+                        <li><a href="#">JavaScript Tutorial</a></li>
+                        <li><a href="#">How To Tutorial</a></li>
+                        <li><a href="#">SQL Tutorial</a></li>
+                        <li><a href="#">Python Tutorial</a></li>
+                        <li><a href="#">W3.CSS Tutorial</a></li>
+                        <li><a href="#">Bootstrap Tutorial</a></li>
+                        <li><a href="#">PHP Tutorial</a></li>
+                        <li><a href="#">Java Tutorial</a></li>
+                        <li><a href="#">C++ Tutorial</a></li>
+                        <li><a href="#">jQuery Tutorial</a></li>
+                    </ul>
+                </div>
+                
+    
+                <div class="footer-item">
+                    <h3>Top Professors</h3>
+                    <ul>
+                        <li><a href="#">Jayson Hermogenes</a></li>
+                        <li><a href="#">Simplicio Santos</a></li>
+                        <li><a href="#">Mark Jonathan Pascual</a></li>
+                        <li><a href="#">Bryan Asistin</a></li>
+                        <li><a href="#">Simon Mendoza</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-item">
+                    <h3>Get Certified</h3>
+                    <p>Boost your career with certifications in:</p>
+                    <ul>
+                        <li><a href="#">AI</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">HTML Certificate</a></li>
+                        <li><a href="#">CSS Certificate</a></li>
+                        <li><a href="#">JavaScript Certificate</a></li>
+                        <li><a href="#">Front End Certificate</a></li>
+                        <li><a href="#">SQL Certificate</a></li>
+                        <li><a href="#">Python Certificate</a></li>
+                        <li><a href="#">PHP Certificate</a></li>
+                        <li><a href="#">jQuery Certificate</a></li>
+                        <li><a href="#">Java Certificate</a></li>
+                        <li><a href="#">C++ Certificate</a></li>
+                        <li><a href="#">C# Certificate</a></li>
+                        <li><a href="#">XML Certificate</a></li>
+                    </ul>
+                </div>                    
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dev/Ed. All Rights Reserved.</p>
+                <p><a href="#terms">Terms of Service</a> | <a href="#privacy">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showModal(title, content) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalContent').innerText = content;
+            document.getElementById('answerModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('answerModal').style.display = 'none';
+        }
+
+        function handleQuestionSubmit(event) {
+            event.preventDefault();
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+
+            const form = event.target;
+            form.reset();
+        }
+
+        const likeDislikeStatus = {};
+
+    function increaseLikes(button) {
+        const likeId = button.getAttribute('data-id');
+        if (!likeDislikeStatus[likeId]) {
+            // Get the current number of likes
+            const likeElement = document.getElementById(likeId);
+            let currentLikes = parseInt(likeElement.textContent);
+
+            // Increment the likes
+            currentLikes += 1;
+
+            // Update the like count in the DOM
+            likeElement.textContent = currentLikes;
+
+            // Set the status to liked
+            likeDislikeStatus[likeId] = 'liked';
+        }
+    }
+
+    function decreaseLikes(button) {
+        const dislikeId = button.getAttribute('data-id');
+        if (!likeDislikeStatus[dislikeId]) {
+            // Get the current number of dislikes
+            const dislikeElement = document.getElementById(dislikeId);
+            let currentDislikes = parseInt(dislikeElement.textContent);
+
+            // Increment the dislikes
+            currentDislikes += 1;
+
+            // Update the dislike count in the DOM
+            dislikeElement.textContent = currentDislikes;
+
+            // Set the status to disliked
+            likeDislikeStatus[dislikeId] = 'disliked';
+        }
+    }
+           
+</script>
+<script src="global.js"></script>
+</body>
+</html>

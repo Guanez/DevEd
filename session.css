@@ -1,0 +1,163 @@
+/* ============================================
+   SESSION PAGE - STYLES
+   ============================================ */
+
+
+.whole-container {
+    margin-top: 4.1rem;
+}
+
+
+
+
+/* Main Section */
+.main {
+
+    text-align: left;
+    margin: 6rem 20rem 4rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.main h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.main p {
+    border-top: 1px solid;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    padding-top: 15px;
+}
+
+/* Tutorial Steps */
+.tutorial-container {
+    margin: 4rem 20rem;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 1px solid #ddd;
+    box-shadow: 8px 6px 6px var(--card-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.title-tutorial {
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed;
+}
+
+.tutorial p {
+    font-size: 1rem;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    gap: 2rem;
+    align-items: center;
+}
+
+.step {
+    flex: 0 0 10%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #2980b9, #6dd5fa, #00c6ff);
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: white;
+    text-shadow: 0 0 12px rgba(41, 128, 185, 0.8), 0 0 25px rgba(109, 213, 250, 1);
+}
+
+.step-description {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Content Section */
+.contents {
+    margin: 4rem 20rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1200px, 1fr));
+    gap: 2rem;
+}
+
+.contents .title-contents {
+    font-size: 1.5rem;
+    text-align: left;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed;
+}
+
+.contents p {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.contents .online_session, .zoom_meeting, .recorded_lesson {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    
+    padding: 2rem;
+    text-align: left;
+    transition: transform 0.3s ease;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 1px solid #ddd;
+    box-shadow: 8px 6px 6px var(--card-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contents button {
+    margin-top: 1rem;
+    background-color: #0f6bae;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contents button:hover {
+    background-color: #000000;
+}
+
+/* Icons for Content */
+.contents .title-contents i {
+    font-size: 2rem;
+    color: #0f6bae;
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer styles now in global.css */

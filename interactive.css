@@ -1,0 +1,155 @@
+/* ============================================
+   INTERACTIVE TUTORIALS PAGE - STYLES
+   ============================================ */
+:root {
+    --primary-color: #0077b6;
+    --primary-hover: #0056d8;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "description"
+        "tutorials";
+    gap: 2rem;
+    margin-left: 260px; 
+}
+
+.description {
+    grid-area: description;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1.3rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 6rem;
+}
+
+.description h1 {
+    color: #fff;
+    font-size: 2.9rem;
+    margin-bottom: 0;
+    margin-top: 50px;
+    
+}
+
+.description p {
+    font-size: 1.5rem;
+    text-align: justify;
+    border-top: 1px double #ffffff;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.basics {
+    margin-bottom: 200px;
+}
+
+.intermediate {
+    margin-top: -100px;
+    margin-bottom: 200px;
+}
+
+.pro {
+    margin-top: -100px;
+    margin-bottom: 200px;
+}
+
+.tutorial-grid {
+    grid-area: tutorials;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 1.5rem;
+}
+
+.tutorial-card {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 8px 6px 6px var(--card-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tutorial-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-top: 20px;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tutorial-card .content {
+    padding: 1.5rem;
+}
+
+.tutorial-card h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    color: #fff;
+}
+
+.tutorial-card p {
+    font-size: 0.9rem;
+    margin: 0 0 1.5rem;
+    color: #fff;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+.tutorial-card a {
+    text-decoration: none;
+    width: 100%;
+    color: #fff;
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.tutorial-card a:hover {
+    background-color: var(--primary-hover);
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .description h1 {
+        font-size: 1.5rem;
+    }
+
+    .description p {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        margin-left: 0;
+        grid-template-areas:
+            "tutorials";
+    }
+}
+
+
+/* Footer styles now in global.css */

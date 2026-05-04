@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Dev/Ed - Register</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="auth.css">
+    <style>
+        .register-wrapper {
+            display: flex;
+            width: 92%;
+            max-width: 1100px;
+            min-height: 520px;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            z-index: 1;
+            animation: authFadeIn 0.6s ease-out;
+            position: relative;
+        }
+        .reg-left {
+            flex: 1.5;
+            background-color: rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 2rem 1.5rem;
+            gap: 1rem;
+        }
+        .reg-left img { width: 8rem; }
+        .reg-left h2 {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        .reg-left .login-link {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+        .reg-left .login-link a {
+            color: var(--accent-cyan);
+            font-weight: 700;
+            transition: color var(--transition-fast);
+        }
+        .reg-left .login-link a:hover { color: var(--text-white); }
+
+        .user-roles-container {
+            flex: 4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 2rem 1.5rem;
+            position: relative;
+        }
+        .userroles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem 1.2rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-smooth);
+            width: 180px;
+            cursor: pointer;
+        }
+        .userroles:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+        .userroles .icon {
+            font-size: 1.5rem;
+            width: 60px;
+            height: 60px;
+            background: rgba(15, 107, 174, 0.2);
+            color: var(--accent-cyan);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            transition: all var(--transition-smooth);
+        }
+        .userroles:hover .icon {
+            background: var(--primary);
+            color: var(--text-white);
+        }
+        .userroles h3 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+        }
+        .userroles p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        .userroles .btn {
+            padding: 8px 24px;
+            background: var(--primary);
+            color: var(--text-white);
+            border: none;
+            border-radius: var(--radius-xl);
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            font-family: var(--font-body);
+            transition: all var(--transition-smooth);
+        }
+        .userroles .btn:hover {
+            background: var(--primary-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(15, 107, 174, 0.4);
+        }
+
+        /* Slide-in Form */
+        .form-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100%;
+            background: rgba(10, 20, 45, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            animation: regSlideIn 0.4s ease-out forwards;
+        }
+        @keyframes regSlideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .close-btn {
+            align-self: flex-end;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-white);
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-family: var(--font-body);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .form-container-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 420px;
+            margin-bottom: 1.5rem;
+        }
+        .form-container-header h2 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-white);
+        }
+        .form-container-header p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 420px;
+        }
+        .form-container form .row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+        .form-container form .row div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container form label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+        .form-container form input {
+            padding: 10px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-white);
+            font-size: 0.88rem;
+            font-family: var(--font-body);
+            transition: border-color var(--transition-fast);
+        }
+        .form-container form input:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(15, 107, 174, 0.12);
+        }
+        .form-container form p {
+            font-size: 0.78rem;
+            text-align: center;
+            margin: 1rem 0;
+            color: var(--text-muted);
+        }
+        .form-container form a {
+            color: var(--accent-cyan);
+        }
+        .form-container form button {
+            padding: 11px 18px;
+            background: var(--primary);
+            color: var(--text-white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            font-family: var(--font-body);
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+        }
+        .form-container form button:hover {
+            background: var(--primary-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(15, 107, 174, 0.4);
+        }
+    </style>
+</head>
+<body class="auth-page">
+    <ul class="circles">
+        <li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li>
+    </ul>
+
+    <div class="register-wrapper">
+        <div class="reg-left">
+            <img src="images/logo.png" alt="logo">
+            <h2>To begin enjoying our services, please take a moment to create and set up your account.</h2>
+            <p class="login-link">
+                Already have an account?
+                <a href="loginn.html">Log in</a>
+            </p>
+        </div>
+
+        <div class="user-roles-container">
+            <div class="userroles">
+                <div class="icon"><i class="fas fa-user"></i></div>
+                <h3>Personal</h3>
+                <p>Personal accounts for individual use</p>
+                <button class="btn">Free Sign Up</button>
+            </div>
+            <div class="userroles">
+                <div class="icon"><i class="fas fa-briefcase"></i></div>
+                <h3>Professional</h3>
+                <p>For professionals in the field</p>
+                <button class="btn">Free Sign Up</button>
+            </div>
+            <div class="userroles">
+                <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3>Professor</h3>
+                <p>For educators looking to teach</p>
+                <button class="btn">Free Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.userroles .btn').forEach((button) => {
+            button.addEventListener('click', function () {
+                const existing = document.querySelector('.form-container');
+                if (existing) existing.remove();
+
+                const formContainer = document.createElement('div');
+                formContainer.classList.add('form-container');
+
+                formContainer.innerHTML = `
+                    <div class="form-container-header">
+                        <div>
+                            <h2>Create an account</h2>
+                            <p>Please fill out the form below to create your account.</p>
+                        </div>
+                        <button class="close-btn">Close</button>
+                    </div>
+                    <form>
+                        <div class="row">
+                            <div>
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="first-name" required>
+                            </div>
+                            <div>
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="last-name" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div>
+                                <label for="phone-number">Phone Number *</label>
+                                <input type="tel" id="phone-number" name="phone-number" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <label for="password">Password *</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <div>
+                                <label for="retype-password">Retype Password *</label>
+                                <input type="password" id="retype-password" name="retype-password" required>
+                            </div>
+                        </div>
+                        <p>
+                            By signing up, you agree to our
+                            <a href="#terms">Terms of Service</a> and
+                            <a href="#privacy">Privacy Policy</a>.
+                        </p>
+                        <button type="submit">Submit</button>
+                    </form>
+                `;
+
+                document.querySelector('.user-roles-container').appendChild(formContainer);
+
+                formContainer.querySelector('.close-btn').addEventListener('click', () => {
+                    formContainer.remove();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

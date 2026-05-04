@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Dev/Ed - Session Booking</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="bookingform.css">
+</head>
+<body>
+    <header>
+        <a href="#home" class="logo"> 
+            <img src="images/logoword2.png" alt=" Dev/Ed logo word">
+        </a>
+
+        <nav>
+            <a href="#home"  onclick="window.location.href='index.html';">Home</a>
+            <a href="#About">About us</a>
+        </nav>
+
+        <div class="search-container">
+            <input type="search" placeholder="Search">
+            <button>🔍</button>
+        </div>
+
+        <div class="signup-login">
+            <a href="#" class="sign-up-link"> User Profile</a>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li onclick="window.location.href='profile_dashboard.html';"><a href="#" > Dashboard</a></li>
+            <li onclick="window.location.href='interactive.html';"><a href="#">Interactive Tutorials</a></li>
+            <li onclick="window.location.href='mentorrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.html';"><a href="#">Expert Mentorship</a></li>
+            <li onclick="window.location.href='session.html';"><a href="#">Live Sessions</a></li>
+            <li onclick="window.location.href='session.html';"><a href="#">Community Support</a></li>
+            <li onclick="window.location.href='ide.html';"><a href="#">Integrated IDE</a></li>
+            <li><a href="#">Orders</a></li>
+        </ul>
+    </div>
+
+    <section class="whole-container">
+        <div class="session-booking-container">
+            <h1 class="form-title">Add Session Booking</h1>
+    
+            <div class="booking-grid">
+                <!-- Client Details -->
+                <div class="client-details">
+                    <h2>Client Details</h2>
+                    <label for="client-type">Client Type:</label>
+                    <select id="client-type" name="client-type">
+                        <option value="">Select Client Type</option>
+                        <option value="student">Student</option>
+                        <option value="freelancer">Freelancer</option>
+                        <option value="developer">Developer</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <h2>Select Your Session Schedule</h2>
+                    <p>Note: You'll wait 'till your order gets a bid.</p>
+                    <div class="inputdate">
+                        <label for="session-date">Choose a Date:</label>
+                        <input type="date" id="session-date" name="session-date" required>
+                    
+                        <label for="session-time">Choose a Time:</label>
+                        <input type="time" id="session-time" name="session-time" required>
+                        </div>
+                </div>
+
+    
+                <!-- Booking Details -->
+                <div class="booking-details">
+                    <h2>Booking Details</h2>
+                    <label for="booking-title">Booking Title *</label>
+                    <input type="text" id="booking-title" name="booking-title" placeholder="Enter booking title" required>
+                    
+                    <label for="academic-field">Programming Topic</label>
+                    <input type="text" id="academic-field" name="academic-field" placeholder="e.g., HTML, CSS, JS">
+                    
+                    <div class="tutor-preference">
+                        <label><input type="radio" name="tutor-preference"> All Tutors</label>
+                        <label><input type="radio" name="tutor-preference"> My Favourite Tutor  s</label>
+                    </div>
+    
+                    <p>Estimated potential matches: 1660</p>
+                </div>
+    
+                <!-- Booking Fee -->
+                <div class="booking-fee">
+                    <h2>Booking Fee</h2>
+                    <p>No fee calculated yet.</p>
+                    <p>Total: Php 0.00</p>
+                    <button class="btn submit-btn">Submit</button>
+                </div>
+            </div>
+    
+            <!-- Sessions -->
+
+            
+        </div>
+    </section>
+    
+
+<script src="global.js"></script>
+</body>
+</html>

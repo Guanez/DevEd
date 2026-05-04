@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Dev/Ed - Expert Mentorship</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="expert_mentorship.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"> 
+            <img src="images/logoword2.png" alt=" Dev/Ed logo word">
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#About">About us</a>
+        </nav>
+
+        <div class="search-container">
+            <input type="search" placeholder="Search">
+            <button>🔍</button>
+        </div>
+
+        <div class="signup-login">
+            <a href="register.html" class="sign-up-link"> Sign up </a>
+            <a href="loginn.html" class="log-in-link"> Log in </a>
+        </div>
+    </header>
+
+    <section class="home animate" id="Home">
+        <div class="home-text animate">
+            <h1><span class="highlight">Expert</span> Mentorship on <span class="highlight">DevEd</span></h1>
+            <h2>Transform your learning experience with personalized guidance from industry professionals through DevEd's Expert Mentorship program. 
+                Our mentors are seasoned developers, engineers, and tech leaders dedicated to helping you master skills, tackle challenges, and achieve your goals.</h2>
+            <h2>_______________________________________________________________________________</h2>
+            <a href="#container" class="btn">Explore Mentors</a>
+        </div>
+
+
+  </section>
+    <div class="container" id="container">
+        <div class="card-container">
+            <img class="round" src="mentors/jayson.jpg" alt="user" />
+            <h3><span class="highlight">Jayson Hermogenes</span></h3>
+            <h6>Bulacan</h6>
+            <p>C# Programmer <br/>IT Professor</p>
+            <div class="buttons">
+                <button class="primary" onclick="openModal('Jayson Hermogenes')">
+                    Message
+                </button>
+                <button class="primary ghost" onclick="follow(this)" id="followBtn">
+                    Follow
+                </button>
+            </div>
+            <div class="skills">
+                <h6>Skills</h6>
+                <ul>
+                    <li>C#</li>
+                    <li>SQL</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Node</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-container">
+            <img class="round" src="mentors/homie.jpg" alt="user" />
+            <h3><span class="highlight">Simplicio Santos</span></h3>
+            <h6>Bulacan</h6>
+            <p>Database Administrator <br/> Instructor</p>
+            <div class="buttons">
+                <button class="primary" onclick="openModal('Simplicio Santos')">
+                    Message
+                </button>
+                <button class="primary ghost" onclick="follow(this)" id="followBtn">
+                    Follow
+                </button>
+            </div>
+            <div class="skills">
+                <h6>Skills</h6>
+                <ul>
+                    <li>MySQL</li>
+                    <li>Networking</li>
+                    <li>Engineering</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-container">
+            <img class="round" src="mentors/mjp.jpg" alt="user" />
+            <h3><span class="highlight">Mark Jonathan Pascual</span></h3>
+            <h6>Bulacan</h6>
+            <p>User interface designer and <br/> Fullstack developer</p>
+            <div class="buttons">
+                <button class="primary" onclick="openModal('Mark Jonathan Pascual')">
+                    Message
+                </button>
+                <button class="primary ghost" onclick="follow(this)" id="followBtn">
+                    Follow
+                </button>
+            </div>
+            <div class="skills">
+                <h6>Skills</h6>
+                <ul>
+                    <li>UI / UX</li>
+                    <li>Front End Development</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>TypeScript</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-container">
+            <img class="round" src="mentors/sim.jpg" alt="user" />
+            <h3><span class="highlight">Simon Mendoza</span></h3>
+            <h6>Bulacan</h6>
+            <p>Web Developer <br/>Professor</p>
+            <div class="buttons">
+                <button class="primary" onclick="openModal('Simon Mendoza')">
+                    Message
+                </button>
+                <button class="primary ghost" onclick="follow(this)" id="followBtn">
+                    Follow
+                </button>
+            </div>
+            <div class="skills">
+                <h6>Skills</h6>
+                <ul>
+                    <li>UI / UX</li>
+                    <li>Web Development</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="about-us" id="About">
+        <div class="about-container">
+            <h2><span class="highlight">Mentors' Background</span></h2>
+            <p>At DevEd, we are committed to providing top-notch mentorship from industry professionals. Our mentors are experienced developers, engineers, and tech leaders who are passionate about helping you succeed. Whether you're looking to master a new skill, tackle a challenging project, or advance your career, our mentors are here to guide you every step of the way.</p>
+            <div class="mentors">
+                <div class="mentor">
+                    <img class="round" src="mentors/jayson.jpg" alt="Jayson Hermogenes">
+                    <h3>Jayson Hermogenes</h3>
+                    <p>C# Programmer and IT Professor from Bulacan. Jayson has over 10 years of experience in software development and teaching.</p>
+                </div>
+                <div class="mentor">
+                    <img class="round" src="mentors/homie.jpg" alt="Simplicio Santos">
+                    <h3>Simplicio Santos</h3>
+                    <p>Database Administrator and Instructor from Bulacan. Simplicio has extensive experience in database management and networking.</p>
+                </div>
+                <div class="mentor">
+                    <img class="round" src="mentors/mjp.jpg" alt="Mark Jonathan Pascual">
+                    <h3>Mark Jonathan Pascual</h3>
+                    <p>User Interface Designer and Fullstack Developer from Bulacan. Mark specializes in creating intuitive and engaging user experiences.</p>
+                </div>
+                <div class="mentor">
+                    <img class="round" src="mentors/sim.jpg" alt="Simon Mendoza">
+                    <h3>Simon Mendoza</h3>
+                    <p>Web Developer and Professor from Bulacan. Simon has a passion for teaching and helping students achieve their goals in web development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Send a Message</h2>
+            <form onsubmit="sendMessage(event)">
+                <label for="recipient">To:</label>
+                <input type="text" id="recipient" name="recipient" readonly>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" oninput="checkMessage()"></textarea>
+                <button type="submit" class="submit-btn" id="sendButton" disabled>Send</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Logo and Subscription -->
+                <div class="footer-item">
+                    <form id="subscribe-form">
+                        <div class="subscribe-form">
+                            <img class="footer-logo" src="images/logoword.png" alt="logo">
+                            <p>
+                                Get the latest updates about DevEd's new products and services.
+                            </p>
+                            <div class="form-row">
+                                <input type="email" placeholder="Enter your email" required>
+                                <button type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>                        
+                    <div class="socials">
+                        <a href="#fb" class="facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#twitter" class="twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#instagram" class="instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#linkedin" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#email" class="email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="#whatsapp" class="whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+    
+                <div class="footer-item">
+                    <h3>Top Tutorials</h3>
+                    <ul>
+                        <li><a href="#">Interactive Programming</a></li>
+                        <li><a href="#">App Development</a></li>
+                        <li><a href="#">Web Design Basics</a></li>
+                        <li><a href="#">AI and Data Science</a></li>
+                        <li><a href="#">HTML Tutorial</a></li>
+                        <li><a href="#">CSS Tutorial</a></li>
+                        <li><a href="#">JavaScript Tutorial</a></li>
+                        <li><a href="#">How To Tutorial</a></li>
+                        <li><a href="#">SQL Tutorial</a></li>
+                        <li><a href="#">Python Tutorial</a></li>
+                        <li><a href="#">W3.CSS Tutorial</a></li>
+                        <li><a href="#">Bootstrap Tutorial</a></li>
+                        <li><a href="#">PHP Tutorial</a></li>
+                        <li><a href="#">Java Tutorial</a></li>
+                        <li><a href="#">C++ Tutorial</a></li>
+                        <li><a href="#">jQuery Tutorial</a></li>
+                    </ul>
+                </div>
+                
+    
+                <div class="footer-item">
+                    <h3>Top Professors</h3>
+                    <ul>
+                        <li><a href="#">Jayson Hermogenes</a></li>
+                        <li><a href="#">Simplicio Santos</a></li>
+                        <li><a href="#">Mark Jonathan Pascual</a></li>
+                        <li><a href="#">Bryan Asistin</a></li>
+                        <li><a href="#">Simon Mendoza</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-item">
+                    <h3>Get Certified</h3>
+                    <p>Boost your career with certifications in:</p>
+                    <ul>
+                        <li><a href="#">AI</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">HTML Certificate</a></li>
+                        <li><a href="#">CSS Certificate</a></li>
+                        <li><a href="#">JavaScript Certificate</a></li>
+                        <li><a href="#">Front End Certificate</a></li>
+                        <li><a href="#">SQL Certificate</a></li>
+                        <li><a href="#">Python Certificate</a></li>
+                        <li><a href="#">PHP Certificate</a></li>
+                        <li><a href="#">jQuery Certificate</a></li>
+                        <li><a href="#">Java Certificate</a></li>
+                        <li><a href="#">C++ Certificate</a></li>
+                        <li><a href="#">C# Certificate</a></li>
+                        <li><a href="#">XML Certificate</a></li>
+                    </ul>
+                </div>                    
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dev/Ed. All Rights Reserved.</p>
+                <p><a href="#terms">Terms of Service</a> | <a href="#privacy">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function follow(button) {
+            window.location.href = 'loginn.html';
+        }
+
+        function openModal(recipient) {
+        document.getElementById('recipient').value = recipient;
+        document.getElementById('messageModal').style.display = 'block';
+        }
+
+        function closeModal() {
+    document.getElementById('messageModal').style.display = 'none';
+}
+
+function openModal(recipient) {
+    document.getElementById('recipient').value = recipient;
+    document.getElementById('messageModal').style.display = 'block';
+}
+
+function checkMessage() {
+    const message = document.getElementById('message').value;
+    document.getElementById('sendButton').disabled = message.trim() === '';
+}
+
+function sendMessage(event) {
+    event.preventDefault();
+    // Redirect to the login page
+    window.location.href = 'loginn.html';
+}
+    </script>
+<script src="global.js"></script>
+</body>
+</html>

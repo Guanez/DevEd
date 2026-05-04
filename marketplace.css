@@ -1,0 +1,305 @@
+/* ============================================
+   MARKETPLACE PAGE - STYLES
+   ============================================ */
+
+.promo-banner {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    margin-top: 80px; /* Adjust based on header height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.promo-banner img {
+    height: 40px;
+    width: auto;
+}
+
+.promo-banner p {
+    margin: 0;
+}
+
+.promo-banner strong {
+    font-weight: bold;
+}
+
+.highlight {
+    background: linear-gradient(90deg, #2980b9, #6dd5fa, #00c6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: white;
+    text-shadow: 0 0 12px rgba(41, 128, 185, 0.8), 0 0 25px rgba(109, 213, 250, 1);
+}
+
+.intro-section {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.intro-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: "Cinzel", serif;
+}
+
+.intro-section p {
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 50px;
+    margin-top: 100px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 200px;
+}
+
+.courses-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007BFF;
+    font-family: "Cinzel", serif;
+}
+
+.tutor-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tutor-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tutor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tutor-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.tutor-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.tutor-card p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.tutor-card button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.tutor-card button:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.modal-content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.modal-content input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.modal-content input[type="text"]:focus {
+    border-color: #007BFF;
+}
+
+.modal-content button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+.success-message {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*features*/
+.features {
+    background: rgb(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.4px);
+    -webkit-backdrop-filter: blur(10.4px);
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    padding-top: 2rem;
+    margin-top: 0;
+}
+
+.features p {
+    font-size: 1.3rem;
+    padding: 0 4rem;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin: 2rem 0;
+    color: #ffffff;
+}
+
+.features-title {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-top: 3rem;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    margin: 4rem;
+    margin-top: 1rem;
+}
+
+.feature-item {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.feature-icon {
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #dddddd;
+}
+
+
+/* Footer styles now in global.css */
