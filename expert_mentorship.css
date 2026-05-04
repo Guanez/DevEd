@@ -2,21 +2,66 @@
    EXPERT MENTORSHIP PAGE - STYLES
    ============================================ */
 
-h3 {
-    margin: 10px 0;
-    color: #fff;
+.home {
+    width: 100%;
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
 }
 
-h6 {
-    margin: 5px 0;
-    text-transform: uppercase;
-    color: #fff;
+.home-text {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-p {
+.home-text h1 {
+    font-size: 3.5rem;
     color: #fff;
-    font-size: 14px;
-    line-height: 21px;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.home-text h2 {
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+.home-text .divider {
+    display: none;
+}
+
+.highlight {
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #0077b6, #00c6ff);
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 119, 182, 0.4);
 }
 
 .container {
@@ -24,115 +69,140 @@ p {
     flex-wrap: wrap; 
     justify-content: center; 
     gap: 2rem; 
-    margin-top: 10px;
-}
-
-.highlight {
-    background: linear-gradient(90deg, #2980b9, #6dd5fa, #00c6ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: white;
-    text-shadow: 0 0 12px rgba(41, 128, 185, 0.8), 0 0 25px rgba(109, 213, 250, 1);
-}
-
-
-section {
-    padding: 50px 10%;
-}
-
-.home {
-    width: 100%;
-    min-height: 90vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.5rem;
-    align-items: center;
-}
-
-
-
-.home-text h1 {
-    font-size: 3rem;
-    color: #fff;
-    
-}
-
-.home-text h2{
-    font-size: 1.5rem;
-    margin: 1rem 0 2rem;
-    color: #fff;
-    
-}
-
-.home-text p {
-  margin-bottom: 10px;
-}
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #0f6bae;
-    color: #fff;
-    border-radius: 0.5rem;
-    text-decoration: none;
-}
-
-.btn:hover {
-    transform: scale(1.2) translateX(10px);
-    transition: .4s;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .card-container {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 22px;
-    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
-    color: #B3B8CD;
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 2rem;
     width: 350px; 
     max-width: 100%;
     text-align: center;
-    border: 1px solid #fff;
-    margin-bottom: 200px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
 }
 
+.card-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card-container:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-container:hover::before {
+    opacity: 1;
+}
 
 .card-container .round {
-    border: 1px solid #0f6bae;
+    border: 3px solid rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    padding: 7px;
+    padding: 5px;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    object-fit: cover;
+    transition: border-color 0.3s ease;
+}
+
+.card-container:hover .round {
+    border-color: #00c6ff;
+}
+
+.card-container h3 {
+    margin: 1rem 0 0.5rem;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.card-container h6 {
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00c6ff;
+    font-size: 0.85rem;
+}
+
+.card-container p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
 }
 
 button.primary {
-    background-color: #0f6bae;
-    border: 1px solid #0f6bae;
-    border-radius: 3px;
+    background: linear-gradient(135deg, #0077b6, #00c6ff);
+    border: none;
+    border-radius: 10px;
     color: #fff;
-    font-family: Montserrat, sans-serif;
+    font-family: inherit;
     font-weight: 500;
-    padding: 10px 25px;
+    padding: 0.75rem 1.5rem;
     cursor: pointer;
-}
-
-button.primary.ghost {
-    background-color: transparent;
-    color: #02899C;
-    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 button.primary:hover {
-    background-color: #1294f1;
-    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
+}
+
+button.primary.ghost {
+    background: transparent;
+    border: 2px solid #00c6ff;
+    color: #00c6ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 button.primary.ghost:hover {
+    background: #00c6ff;
     color: #fff;
-    background-color: #118be2;
 }
 
 .skills {
-    background-color: #0f6bae;
+    background: rgba(0, 119, 182, 0.2);
+    backdrop-filter: blur(10px);
     text-align: left;
-    padding: 15px;
-    margin-top: 30px;
+    padding: 1rem;
+    margin-top: 1.5rem;
     border-radius: 16px;
+    border: 1px solid rgba(0, 119, 182, 0.3);
+}
+
+.skills h6 {
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00c6ff;
+    font-size: 0.75rem;
 }
 
 .skills ul {
@@ -142,61 +212,71 @@ button.primary.ghost:hover {
 }
 
 .skills ul li {
-    border: 1px solid #fff;
-    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
     display: inline-block;
-    font-size: 12px;
-    margin: 0 7px 7px 0;
-    padding: 7px;
+    font-size: 0.8rem;
+    margin: 0 0.5rem 0.5rem 0;
+    padding: 0.5rem 1rem;
     color: #fff;
+    transition: all 0.3s ease;
+}
+
+.skills ul li:hover {
+    background: rgba(0, 119, 182, 0.5);
+    transform: translateY(-2px);
 }
 
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 1000; 
+    z-index: 2000; 
     left: 0;
     top: 0;
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: rgba(0, 0, 0, 0.7); 
+    backdrop-filter: blur(5px);
 }
 
 .modal-content {
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
     margin: 10% auto; 
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%; 
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 90%; 
     max-width: 500px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.3s ease-in-out;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .close {
-    color: #aaa;
+    color: #999;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
-    text-decoration: none;
+    color: #333;
     cursor: pointer;
 }
 
 .modal-content h2 {
     margin-top: 0;
-    font-size: 24px;
+    font-size: 1.8rem;
     color: #333;
+    margin-bottom: 1.5rem;
 }
 
 .modal-content form {
@@ -205,48 +285,59 @@ button.primary.ghost:hover {
 }
 
 .modal-content label {
-    margin-top: 10px;
-    font-size: 16px;
+    margin-top: 1rem;
+    font-size: 0.95rem;
     color: #555;
+    font-weight: 500;
 }
 
 .modal-content input,
 .modal-content textarea {
-    margin-top: 5px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
     width: 100%;
     box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+    outline: none;
+    border-color: #0077b6;
 }
 
 .modal-content .submit-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
     color: #fff;
-    background-color: #007bff;
+    background: linear-gradient(135deg, #0077b6, #00c6ff);
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .modal-content .submit-btn:hover {
-    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
 }
 
 .submit-btn:disabled {
     cursor: not-allowed; 
-    background-color: #ccc; 
+    background: #ccc; 
     color: #666; 
 }
 
 .about-us {
-    padding: 4rem 2rem;
-    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
     text-align: center;
+    position: relative;
 }
 
 .about-container {
@@ -258,12 +349,27 @@ button.primary.ghost:hover {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.about-us h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
 }
 
 .about-us p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #fff;
+    font-size: 1.1rem;
+    margin: 2rem auto;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    line-height: 1.8;
 }
 
 .mentors {
@@ -271,15 +377,25 @@ button.primary.ghost:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+    margin-top: 3rem;
 }
 
 .mentor {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
     max-width: 300px;
     text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mentor:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .mentor img.round {
@@ -287,17 +403,49 @@ button.primary.ghost:hover {
     width: 100px;
     height: 100px;
     margin-bottom: 1rem;
+    object-fit: cover;
+    border: 3px solid rgba(0, 119, 182, 0.5);
 }
 
 .mentor h3 {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #000000;
+    color: #fff;
+    font-weight: 600;
 }
 
 .mentor p {
-    font-size: 1rem;
-    color: #000000;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .home-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .card-container {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .home-text h1 {
+        font-size: 2rem;
+    }
+    
+    .card-container {
+        width: 100%;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .about-us h2 {
+        font-size: 2rem;
+    }
 }
 
 /* Footer styles now in global.css */

@@ -31,12 +31,14 @@
         </div>
     </header>
 
-    <div class="welcome-section">
+    <div class="welcome-section scroll-reveal">
+        <span class="section-label">Community</span>
         <h1>Welcome to the Community Support Forum</h1>
     </div>
 
     <div class="container">
-        <div class="question-form">
+        <div class="question-form scroll-reveal">
+            <span class="section-label">Ask</span>
             <h2>Ask a Question</h2>
             <form onsubmit="handleQuestionSubmit(event)">
                 Name<input type="text" placeholder="Your Name" required />
@@ -54,7 +56,8 @@
             </form>
         </div>
 
-        <div class="questions-section">
+        <div class="questions-section scroll-reveal">
+            <span class="section-label">FAQ</span>
             <h2 id="h2">Most Frequent Questions</h2>
             <div class="question">
                 <h2 onclick="showModal('How to center a div in CSS?', 'You can center a div using CSS flexbox or grid. Example: `display: flex; justify-content: center; align-items: center;`.')">How to center a div in CSS?</h2>
@@ -84,7 +87,8 @@
         </div>
     </div>
 
-    <div class="join-community">
+    <div class="join-community scroll-reveal">
+        <span class="section-label">Connect</span>
         <h2>Join the Community</h2>
         <p>Become a part of the community to connect with like-minded individuals, share your knowledge, and learn from others.</p>
         <div class="cta-buttons">

@@ -2,49 +2,96 @@
    COMMUNITY SUPPORT PAGE - STYLES
    ============================================ */
 
-/* Header/footer styles now in global.css */
-
 .container {
-    max-width: 1600px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-bottom: 100px;
+    max-width: 1400px;
+    margin: 6rem auto 4rem;
+    padding: 0 2rem;
 }
 
 .welcome-section {
     text-align: center;
-    margin-bottom: 2rem;
-    width: 100%;
-    margin-top: 200px;
+    margin-bottom: 3rem;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
 }
 
 .welcome-section h1 {
     font-size: 2.5rem;
     color: #fff;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 1;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .question-form,
 .questions-section {
-    background: #f5f5fa; /* Light lavender background to complement the font */
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     flex: 1;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.question-form:hover,
+.questions-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
 }
 
 .question-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .question-form h2 {
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
-    color: #2c3e50; /* Deep grey for readability */
+    color: #fff;
+    position: relative;
+}
+
+.question-form h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
 }
 
 .question-form input,
@@ -52,117 +99,105 @@
     width: 100%;
     margin-bottom: 1rem;
     padding: 1rem;
-    border: 1px solid #007acc; /* Matches the button color */
-    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
     font-size: 1rem;
-    color: #2c3e50; /* Deep grey font color */
-    background: #ffffff; /* Crisp white for inputs */
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
     transition: border-color 0.3s, box-shadow 0.3s;
     box-sizing: border-box;
 }
 
 .question-form input:focus,
 .question-form textarea:focus {
-    border-color: #005f99; /* Darker blue when focused */
-    box-shadow: 0 0 8px rgba(0, 95, 153, 0.3);
+    border-color: #00c6ff;
+    box-shadow: 0 0 12px rgba(0, 198, 255, 0.3);
     outline: none;
 }
 
 .question-form button {
-    background-color: #007acc; /* Blue that stands out */
-    color: white; /* Contrasting font color */
+    background: linear-gradient(135deg, #0077b6, #00c6ff);
+    color: #fff;
     border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 10px;
-    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
 }
 
 .question-form button:hover {
-    background-color: #005f99; /* Slightly darker blue for hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
 }
 
 .questions-section h2 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #2c3e50; /* Matches form title */
+    color: #fff;
+    position: relative;
 }
 
-.questions-section {
-    background: #ffffff; /* Clean white for contrast */
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    flex: 1;
+.questions-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
 }
 
 .questions-section .question {
     margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.questions-section .question:hover {
+    padding-left: 1rem;
 }
 
 .questions-section .question h2 {
-    font-size: 1.5rem;
-    color: #007acc; /* Same blue as the buttons */
+    font-size: 1.3rem;
+    color: #00c6ff;
     margin-bottom: 0.5rem;
     transition: color 0.3s;
+    position: static;
+}
+
+.questions-section .question h2::after {
+    display: none;
 }
 
 .questions-section .question h2:hover {
-    color: #005f99; /* Darker blue on hover */
+    color: #fff;
 }
 
 .questions-section .question p {
-    color: #4a4a4a; /* Neutral grey for text readability */
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
 }
 
 .questions-section button {
-    background-color: #007acc; /* Matches form button color */
-    color: white; /* Contrasting font */
+    background: linear-gradient(135deg, #0077b6, #00c6ff);
+    color: #fff;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
+    margin-right: 0.5rem;
 }
 
 .questions-section button:hover {
-    background-color: #005f99; /* Hover effect matches form button */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.community-questions {
-    margin-top: 2rem;
-}
-
-.community-questions h2 {
-    margin-bottom: 1.5rem;
-}
-
-.question {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
-    cursor: pointer;
-}
-
-.question h2 {
-    font-size: 1.5rem;
-    color: #007acc;
-    margin-bottom: 0.5rem;
-}
-
-footer {
-    background-color: #007acc;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    width: 100%;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 119, 182, 0.3);
 }
 
 .modal {
@@ -172,42 +207,57 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
     justify-content: center;
     align-items: center;
+    z-index: 2000;
 }
 
 .modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 2.5rem;
+    border-radius: 20px;
     width: 90%;
     max-width: 600px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: modalFadeIn 0.3s ease-in-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .modal-header {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #007acc;
+    color: #0077b6;
+    font-weight: 600;
 }
 
 .modal-body {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    line-height: 1.6;
 }
 
 .modal-close {
-    background: #007acc;
-    color: white;
+    background: linear-gradient(135deg, #0077b6, #00c6ff);
+    color: #fff;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
     cursor: pointer;
     float: right;
+    transition: all 0.3s ease;
 }
 
 .modal-close:hover {
-    background: #005f99;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
 }
 
 .notification {
@@ -215,67 +265,131 @@ footer {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: #4caf50;
+    background: linear-gradient(135deg, #4caf50, #45a049);
     color: white;
     padding: 1rem 2rem;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 3000;
+    animation: slideIn 0.3s ease;
 }
 
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
 
 .join-community {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     text-align: center;
-    margin: 3rem auto;
+    margin: 0 auto 4rem;
     max-width: 800px;
-    margin-bottom: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+.join-community::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
 }
 
 .join-community h2 {
     font-size: 2rem;
-    color: #2c3e50;
+    color: #fff;
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .join-community p {
-    font-size: 1.2rem;
-    color: #7f8c8d;
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
 }
 
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .cta-buttons button {
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    border-radius: 30px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border-radius: 50px;
     cursor: pointer;
     border: none;
-    background-color: #0f6bae;
-    color: white;
-    transition: background-color 0.3s;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.cta-buttons button:hover {
-    background-color: #004a75;
+.cta-buttons button:first-child {
+    background: linear-gradient(135deg, #0077b6, #00c6ff);
+    color: #fff;
+}
+
+.cta-buttons button:first-child:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
 }
 
 .cta-buttons button:nth-child(2) {
-    background-color: #f0f2ff;
-    color: #000;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid #00c6ff;
 }
 
 .cta-buttons button:nth-child(2):hover {
-    background-color: #d1d8e1;
+    background: #00c6ff;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
+@media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+    
+    .welcome-section p {
+        font-size: 1rem;
+    }
+    
+    .join-community h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .cta-buttons button {
+        width: 100%;
+    }
+}
 
 /* Footer styles now in global.css */

@@ -2,163 +2,222 @@
    BOOKING FORM PAGE - STYLES
    ============================================ */
 
-/*main webpage content container*/
 .whole-container {
-    margin-left: 220px;
-    margin-right: 20px;
-    padding: 2rem;
-    color: #fff;
+    max-width: 1400px;
+    margin: 6rem auto 4rem;
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    margin-top: 6rem;
-    
+    gap: 3rem;
 }
 
-
-/* Session Booking Container */
 .session-booking-container {
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.session-booking-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
 }
 
 .form-title {
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     color: #fff;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
-/* Booking Grid */
 .booking-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-/* Client Details Section */
 .client-details, .booking-details, .booking-fee {
     background: rgba(0, 0, 0, 0.3);
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.client-details:hover, 
+.booking-details:hover, 
+.booking-fee:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .client-details h2, 
 .booking-details h2, 
 .booking-fee h2 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: #fff;
+    font-weight: 600;
+    position: relative;
+}
+
+.client-details h2::after,
+.booking-details h2::after,
+.booking-fee h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
 }
 
 .client-details label, 
-.booking-details label {
+.booking-details label,
+.sessions label {
     font-size: 1rem;
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0.5rem;
     display: block;
+    font-weight: 500;
 }
 
 .client-details select, 
-.booking-details input {
+.booking-details input,
+.sessions input[type="date"], 
+.sessions input[type="time"] {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem;
     font-size: 1rem;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 1rem;
     box-sizing: border-box;
-    color: #000;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.inputdate {
-    display: flex;
-    margin: 10px;
-    padding: 10px;
-}
-
-.inputdate input {
-    color: #000;
-    margin: 0 20px;
-    padding: 0;
-
+.client-details select:focus, 
+.booking-details input:focus,
+.sessions input[type="date"]:focus, 
+.sessions input[type="time"]:focus {
+    border-color: #00c6ff;
+    box-shadow: 0 0 12px rgba(0, 198, 255, 0.3);
+    outline: none;
 }
 
 .client-details select option {
     color: #000;
+    background: #fff;
 }
 
-.client-details select:focus, 
-.booking-details input:focus {
-    border-color: #007BFF;
-    outline: none;
-}
-
-/* Tutor Preference and Background Buttons */
-.tutor-preference{
+.inputdate {
     display: flex;
     gap: 1rem;
     align-items: center;
+    margin-bottom: 1rem;
+}
+
+.inputdate input {
+    color: #fff;
+    flex: 1;
+}
+
+.tutor-preference {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
 }
 
 .tutor-preference label {
     white-space: nowrap;
     display: inline-flex;
     font-size: 1rem;
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
+    align-items: center;
 }
 
 .tutor-preference input {
     margin: 0;
+    cursor: pointer;
 }
-
 
 .booking-details p {
     font-size: 1rem;
     margin-top: 1rem;
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
 }
 
-/* Booking Fee Section */
 .booking-fee p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
     color: #fff;
+    font-weight: 500;
 }
 
 .submit-btn {
     width: 100%;
-    padding: 0.75rem;
-    font-size: 1.2rem;
+    padding: 1rem;
+    font-size: 1.1rem;
     color: #fff;
-    background: #007BFF;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #0077b6, #00c6ff);
+    border-radius: 10px;
     cursor: pointer;
     border: none;
-    transition: background 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
-    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
 }
 
-/* Sessions Section */
 .sessions {
     display: flex;
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.sessions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
 }
 
 .sessions h2 {
@@ -166,36 +225,41 @@
     font-weight: 600;
     color: #fff;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .sessions p {
-    font-size: 1rem;
-    color: #ccc;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
 }
 
-.sessions label {
-    font-size: 1rem;
-    color: #ccc;
-    margin-bottom: 0.5rem;
-    display: block;
+@media (max-width: 1024px) {
+    .whole-container {
+        padding: 0 1.5rem;
+    }
+    
+    .booking-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-.sessions input[type="date"], 
-.sessions input[type="time"] {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    margin-bottom: 1rem;
-    box-sizing: border-box;
+@media (max-width: 600px) {
+    .form-title,
+    .sessions h2 {
+        font-size: 1.5rem;
+    }
+    
+    .session-booking-container,
+    .sessions {
+        padding: 2rem;
+    }
 }
 
-.sessions input[type="date"]:focus, 
-.sessions input[type="time"]:focus {
-    border-color: #007BFF;
-    outline: none;
-}
+/* Footer styles now in global.css */

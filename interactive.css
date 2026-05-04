@@ -1,95 +1,142 @@
 /* ============================================
    INTERACTIVE TUTORIALS PAGE - STYLES
    ============================================ */
-:root {
-    --primary-color: #0077b6;
-    --primary-hover: #0056d8;
-    --card-shadow: rgba(0, 0, 0, 0.1);
-}
 
 .container {
-    max-width: 1600px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "description"
-        "tutorials";
-    gap: 2rem;
-    margin-left: 260px; 
+    padding: 0 2rem;
+    margin-left: 260px;
+    margin-top: 6rem;
 }
 
 .description {
-    grid-area: description;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 1.3rem;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 6rem;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff, #0077b6);
+    background-size: 200% 100%;
+    animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
 }
 
 .description h1 {
     color: #fff;
-    font-size: 2.9rem;
-    margin-bottom: 0;
-    margin-top: 50px;
-    
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .description p {
-    font-size: 1.5rem;
-    text-align: justify;
-    border-top: 1px double #ffffff;
-    padding-top: 20px;
-    margin-top: 10px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 1;
 }
 
-.basics {
-    margin-bottom: 200px;
+.section-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #00c6ff;
+    margin-bottom: 0.5rem;
+    display: block;
 }
 
-.intermediate {
-    margin-top: -100px;
-    margin-bottom: 200px;
+.basics, .intermediate, .pro {
+    margin-bottom: 4rem;
 }
 
-.pro {
-    margin-top: -100px;
-    margin-bottom: 200px;
+.basics h1, .intermediate h1, .pro h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.basics h1::after, .intermediate h1::after, .pro h1::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
 }
 
 .tutorial-grid {
-    grid-area: tutorials;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
 }
 
 .tutorial-card {
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10.4px);
-    -webkit-backdrop-filter: blur(10.4px);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 8px 6px 6px var(--card-shadow);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.tutorial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #0077b6, #00c6ff);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.tutorial-card:hover::before {
+    opacity: 1;
 }
 
 .tutorial-card img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: contain;
-    margin-top: 20px;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
-.tutorial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.tutorial-card:hover img {
+    transform: scale(1.05);
 }
 
 .tutorial-card .content {
@@ -97,59 +144,108 @@
 }
 
 .tutorial-card h3 {
-    text-align: center;
-    font-size: 1.5rem;
-    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+    margin: 0 0 0.75rem;
     color: #fff;
+    font-weight: 600;
 }
 
 .tutorial-card p {
-    font-size: 0.9rem;
-    margin: 0 0 1.5rem;
-    color: #fff;
+    font-size: 0.95rem;
+    margin: 0 0 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
 }
 
-.btn {
+.tutorial-card .btn {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .tutorial-card a {
     text-decoration: none;
-    width: 100%;
     color: #fff;
-    background-color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    font-size: 1rem;
-    display: inline-block;
-    text-align: center;
-    transition: background-color 0.3s ease;
+    background: linear-gradient(135deg, #0077b6, #00c6ff);
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tutorial-card a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
 }
 
 .tutorial-card a:hover {
-    background-color: var(--primary-hover);
+    background: linear-gradient(135deg, #0056d8, #0077b6);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
+}
+
+.tutorial-card a:hover::before {
+    left: 100%;
+}
+
+.tutorial-card a::after {
+    content: '→';
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.tutorial-card a:hover::after {
+    transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        margin-left: 0;
+        padding: 0 1.5rem;
+    }
+
+    .description {
+        padding: 2rem;
+    }
+
+    .description h1 {
+        font-size: 2rem;
+    }
+
+    .tutorial-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-
     .description h1 {
         font-size: 1.5rem;
     }
 
     .description p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
-    .container {
-        margin-left: 0;
-        grid-template-areas:
-            "tutorials";
+    .basics h1, .intermediate h1, .pro h1 {
+        font-size: 1.5rem;
+    }
+
+    .tutorial-grid {
+        grid-template-columns: 1fr;
     }
 }
-
 
 /* Footer styles now in global.css */
